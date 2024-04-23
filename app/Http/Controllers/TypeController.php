@@ -13,7 +13,10 @@ class TypeController extends Controller
      */
     public function index()
     {
-        return "prova";
+
+        $types = Type::all();
+
+        return view('types.index', compact('types'));
     }
 
     /**
@@ -37,7 +40,7 @@ class TypeController extends Controller
      */
     public function show(Type $type)
     {
-        //
+        return view('types.show', compact('type'));
     }
 
     /**
