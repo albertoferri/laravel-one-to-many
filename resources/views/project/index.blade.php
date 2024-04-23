@@ -17,6 +17,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{$project->name}}</h5>
                   <p class="card-text">{{$project->skill}}</p>
+                  <p class="card-text">{{$project->type->title}}</p>
                   <a class="btn btn-primary my-2" href="{{$project->git_url}}">APRI REPO</a><br>
                   <a href="{{route('project.show', $project->id)}}" class="btn btn-success fw-bold text-uppercase">maggiori informazioni</a>
                 </div>

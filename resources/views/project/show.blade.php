@@ -9,7 +9,7 @@
                     <div class="card-body">
                       <h5 class="card-title">{{$project->name}}</h5>
                       <p class="card-text">{{$project->description}}</p>
-                      <p class="card-text">{{$project->skill}}</p>
+                      <p class="card-text">{{$project->type->title}}</p>
                       <a class="btn btn-primary my-2" href="{{$project->git_url}}">APRI REPO</a><br>
 
                       <div class="d-flex gap-3">

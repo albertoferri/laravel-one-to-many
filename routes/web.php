@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,4 +49,8 @@ Route::middleware(['auth', 'verified'])
     }
 );
 
+// rotte per progetti
 Route::resource('project', ProjectController::class)->middleware(['auth', 'verified']);
+
+// rotte per i types
+Route::resource('types', TypeController::class)->middleware(['auth', 'verified']);
