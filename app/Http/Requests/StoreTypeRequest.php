@@ -22,7 +22,16 @@ class StoreTypeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|max:30',
+            'description' => 'nullable'
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'title.required' => 'Inserisci un nome valido',
+            'title.max' => 'il titolo deve avere :max caratteri'
         ];
     }
 }

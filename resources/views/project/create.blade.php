@@ -3,6 +3,8 @@
 @section('content')
     <div class="container py-5">
 
+      <h1 class="mb-5">AGGIUNGI UN PROGETTO</h1>
+
         <form action="{{ route('project.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
@@ -17,7 +19,7 @@
         
             <div class="mb-3">
                 <label for="description" class="form-label">Descrizione</label>
-                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"></textarea>
+                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description">{{old('description')}}</textarea>
                 @error('description')
                 <div class="invalid-feedback">
                   {{$message}}
