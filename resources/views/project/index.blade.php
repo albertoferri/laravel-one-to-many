@@ -10,20 +10,31 @@
 
         </div>
 
-        <div class="row row-cols-3 gap-4">
-            @foreach ($projects as $project)
-            <div class="card mb-3">
-                <img src="{{asset('storage/' . $project->thumb)}}" class="card-img-top  " alt="immagine progetto" style="height: 200px;">
-                <div class="card-body">
-                  <h5 class="card-title">{{$project->name}}</h5>
-                  <p class="card-text">{{$project->skill}}</p>
-                  <p class="card-text">{{$project->type->title}}</p>
-                  <a class="btn btn-primary my-2" href="{{$project->git_url}}">APRI REPO</a><br>
-                  <a href="{{route('project.show', $project->id)}}" class="btn btn-success fw-bold text-uppercase">maggiori informazioni</a>
-                </div>
-            </div>
-            @endforeach
-        </div>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Immagine</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Skill</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Repo</th>
+                <th scope="col">Dettagli</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach ($projects as $project)
+              <tr>
+                <td><img src="{{asset('storage/' . $project->thumb)}}" alt="immagine progetto" style="height: 200px;"></td>
+                <td>{{$project->name}}</td>
+                <td>{{$project->skill}}</td>
+                <td>{{$project->type->title}}</td>
+                <td><a class="btn btn-info my-2 fw-bold" href="{{$project->git_url}}">APRI REPO</a></td>
+                <td><a href="{{route('project.show', $project->id)}}" class="btn btn-warning fw-bold text-uppercase my-2">Modifica</a></td>
+              </tr>
+              @endforeach
+            </tbody>
+        </table>
+          
         
     </div>
 @endsection

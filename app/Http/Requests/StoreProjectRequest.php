@@ -27,6 +27,7 @@ class StoreProjectRequest extends FormRequest
             'thumb'=> 'nullable|file|max:1024',
             'skill'=> 'required',
             'git_url'=> 'required|url',
+            'type_id' => 'required|exists:types,id',
         ];
     }
 
@@ -39,6 +40,7 @@ class StoreProjectRequest extends FormRequest
             'skill.required' => "Le tecnologie utilizzate devono essere inserite",
             'git_url.required' => "Il link alla repo di GitHub deve essere inserito",
             'git_url.url' => "Il link alla repo di GitHub deve essere un URL valido",
+            'type_id.required' => 'devi selezionare almeno un valore',
         ];
     }
 }

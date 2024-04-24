@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Type;
 use App\Http\Requests\StoreProjectRequest;
 use Illuminate\Support\Facades\Storage;
 
@@ -22,7 +23,10 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view("project.create");
+
+        $types = Type::all();
+
+        return view("project.create", compact('types'));
     }
 
     /**
